@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>EndoBench</title>
+  <link rel="icon" type="image/x-icon" href="static/images/Endobench_icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <img src="static/images/Endobench_icon.png" style="width:1em;vertical-align: middle" alt="Logo"/> 
+              <span class="mmmu" style="vertical-align: middle">EndoBench</span>
+              </h1>
+            <h2 class="subtitle is-3 publication-subtitle">
+              A Comprehensive Evaluation of Multi-Modal Large Language Models for Endoscopy Analysis
+              <!-- <br> -->
+            </h2>
+            </h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Shengyuan Liu*<sup style="color:#ffac33;">1</sup>,</span>
+                <span class="author-block">Boyun Zheng*<sup style="color:#ffac33;">,1</sup>,</span>
+                <span class="author-block">Wenting Chen*<sup style="color:#6fbf73;">2</sup>,</span>
+                <span class="author-block">Zhihao Peng<sup style="color:#ffac33;">1</sup>,</span><br>
+                <span class="author-block">Zhenfei Yin<sup style="color:#ff00f2;">3</sup>,</span>
+                <span class="author-block">Jing Shao<sup style="color:#9b51e0;">4</sup>,</span>
+                <span class="author-block">Jiancong Hu<sup style="color:#ed4b82;">5</sup>,</span>
+                <!-- <span class="author-block">Ziyan Huang<sup style="color:#ffac33;">1,6</sup>,</span>
+                <span class="author-block">Yanzhou Su<sup style="color:#6fbf73;">1</sup>,</span>
+                <span class="author-block">Benyou Wang<sup style="color:#9b51e0;">7,8</sup>,</span>
+                <span class="author-block">Shaoting Zhang<sup style="color:#6fbf73;">1</sup>,</span>
+                <span class="author-block">Bin Fu<sup style="color:#60121572;">9</sup>,</span>
+                <span class="author-block">Jianfei Cai<sup style="color:#ed4b82;">3</sup>,</span>
+                <span class="author-block">Bohan Zhuang<sup style="color:#ed4b82;">3</sup>,</span>
+                <span class="author-block">Eric J Seibel<sup style="color:#ffac33;">2</sup>,</span>
+                <span class="author-block">Junjun He<sup style="color:#6fbf73;">†,1</sup>,</span> -->
+                <span class="author-block">Yixuan Yuan<sup style="color:#ffac33;">†,1</sup>,</span>
+              </div>
+          
+              <br>
+          
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup style="color:#ffac33;">1</sup>The Chinese University of Hong Kong,</span>
+                <span class="author-block"><sup style="color:#6fbf73;">2</sup>City University of Hong Kong</span>
+                <span class="author-block"><sup style="color:#ff00f2;">3</sup>University of Oxford</span>
+                <span class="author-block"><sup style="color:#9b51e0;">4</sup>Shanghai AI Laboratory,</span>
+                <span class="author-block"><sup style="color:#ed4b82;">5</sup>The Sixth Affiliated Hospital, Sun Yat-sen University</span></br>
+                <!-- <span class="author-block"><sup style="color:#ffac33;">5</sup>University of Cambridge,</span>
+                <span class="author-block"><sup style="color:#ed4b82;">6</sup>Shanghai Jiao Tong University,</span>
+                <span class="author-block"><sup style="color:#9b51e0;">7</sup>The Chinese University of Hong Kong, Shenzhen</span>
+                <span class="author-block"><sup style="color:#ff00f2;">8</sup>Shenzhen Research Institute of Big Data</span>
+                <span class="author-block"><sup style="color:#60121572;">9</sup>Shenzhen Institute of Advanced Technology (SIAT), Chinese Academy of Sciences</span> -->
+              </div>
+    
+              <br>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">*Core Contributors</span><br>
+                <span class="author-block">†Corresponding to:</span>
+                <span class="author-block"><a href="mailto:yxyuan@ee.cuhk.edu.hk">yxyuan@ee.cuhk.edu.hk</a>,</span>
+                <!-- <span class="author-block"><a href="mailto:hejunjun@pjlab.org.cn">hejunjun@pjlab.org.cn</a>,</span>
+                <span class="author-block"><a href="mailto:qiaoyu@pjlab.org.cn">qiaoyu@pjlab.org.cn</a>,</span> -->
+              </div>
+
+                  <div class="column has-text-centered">
+                    <!-- <div class="publication-links">
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2408.03361" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span> -->
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/CUHK-AIM-Group/EndoBench" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- HF abstract Link -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/Saint-lsy/EndoBench" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span>🤗Hugging Face</span>
+                </a>
+              </span>
+
+                <!-- ArXiv abstract Link -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/2408.03361" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i> -->
+
+                  <!-- </span>
+                  <span>arXiv</span> -->
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+        <div class="content has-text-centered">
+          <img src="static/images/dataset.jpg" alt="geometric reasoning" width="100%"/>
+          <p>  
+            Overview of our proposed EndoBench, the first comprehensive benchmark specifically designed to evaluate MLLMs across the complete spectrum of endoscopy, covering 4 endoscopic modalities, 12 specialized clinical tasks, and 5 levels of visual prompting granularity.
+        </p>  
+    </div>
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-four-fifths"> -->
+        <!-- <h2 class="title is-3">🔔News</h2> -->
+        <!-- <div class="content has-text-justified"> -->
+          <!-- <p>
+            <b>🚀[2024-09-26]: Accepted by NeurIPS 2024 Datasets and Benchmarks Track!🌟</b>
+          </p> -->
+      <div class="column is-four-fifths">   
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Gastrointestinal endoscopy is a cornerstone of diagnosing and managing gastrointestinal diseases, yet its growing complexity and volume necessitate advanced tools to enhance clinical accuracy and efficiency. Vision-language models (MLLMs) offer significant potential by integrating endoscopic images with textual data to support decision-making, but their effectiveness in this domain requires thorough assessment. Existing benchmarks for evaluating MLLMs in endoscopy are limited, focusing on single scenes or simple tasks, and thus fail to capture the diverse and complex nature of clinical endoscopy. To address this, we present the EndoVQA-Instruct dataset and the EndoBench benchmark, the most extensive resource to date for endoscopic visual question answering (VQA). EndoBench encompasses four major aspects: Anatomical Structure Recognition, Surgical Operation Workflow and Analysis, Spatial Region Localization and Understanding, and Lesion and Grading Analysis. We evaluate 24 MLLMs, including 13 open-source general-domain models, 5 proprietary models, and 5 specialized models for medical applications. This comprehensive analysis reveals innovative insights and provides critical guidance for refining MLLMs for endoscopic use, advancing the development of AI-driven tools for clinical practice. 
+            </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+<!-- </section>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+        <div class="content has-text-centered">
+          <img src="static/images/body_med.png" alt="geometric reasoning" width="100%"/>
+          <p>
+            Examples of GMAI-MMBench. The benchmark covers a variety of clinical tasks, departments, and perceptual granularities from worldwide data sources.
+          </p>          
+          </div>
+    </div>
+  </div> -->
+</section>
+<!-- DATASET SECTION -->
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mmmu">
+    <img src="static/images/Endobench_icon.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+    <span class="mmmu" style="vertical-align: middle">EndoBench</span>
+  </h1>
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            we introduce <b>EndoBench</b>, a comprehensive endoscopy benchmark designed to evaluate the multi-dimensional capabilities of current multi-modal large language models (MLLMs) in endoscopic image analysis. To the best of our knowledge, EndoBench is the most extensive multi-modal endoscopic benchmark to date, encompassing 4 distinct endoscopic scenarios, 12 specialized endoscopic tasks, and 5 levels of visual prompting granularity. For <b>multi-scene coverage</b>, EndoBench spans the complete spectrum of endoscopy procedures—from Capsule endoscopy (CE) and Gastroscopy (GS) to Colonoscopy (CS) and Surgical endoscopy (SE). For <b>multi-dimensional capacities evaluation</b>, EndoBench assesses MLLMs from 12 distinct tasks across 4 major categories, including anatomical structure recognition, lesion analysis and grading, spatial localization and region understanding, and surgical workflow and operation analysis. To thoroughly evaluate fine-grained perceptual capabilities, we implement six visual prompting granularities—image-level, box-level, contour-level, multi-box, and multi-contour—offering comprehensive visual prompts. Our dataset construction involves collecting 21 public and 1 private endoscopy datasets and standardizing QA pairs, yielding 446,535 VQA pairs comprising our EndoBench dataset, the current largest endoscopic instruction-tuning collection. From EndoBench, we extract representative pairs that undergo rigorous clinical review, resulting in our final EndoBench dataset of 6,832 clinically validated VQA pairs. We subsequently evaluate 13 open-source general-purpose MLLMs, 5 specialized medical MLLMs, and 5 proprietary general-purpose MLLMs on EndoBench. To establish clinical reference standards, we recruit two certified clinicians to answer questions from EndoBench. Extensive experiments reveal that while proprietary MLLMs outperform open-source models overall, certain medical-domain MLLMs demonstrate superior performance in specific tasks. Nevertheless, human clinicians still surpass all existing MLLMs, highlighting significant opportunities for improvement in this field.
+          </p>
+           <img src="static/images/dataset.jpg" alt="algebraic reasoning" class="center">
+          </p>
+        </div>
+    </div>
+    </div>
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Statistics</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/EndoBench_table.png" alt="algebraic reasoning" width="100%"/>
+              <p> 
+                Comparisons with existing multi-modal endoscopic benchmarks.
+              </p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/dataset_statistic.png" alt="arithmetic reasoning" width="80%"/>
+              <p> 
+                The statistics of EndoBench, showcasing (a) the distribution across 12 clinical tasks and (b) the distribution of 21 public and 1 private datasets (WCE2025).
+              </p>
+            </div>
+          </div>
+          <!-- <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/Statistics3.jpg" alt="arithmetic reasoning" width="80%"/>
+              <p> 
+                Statistics of the departments and their sub-task abbreviations mentioned in the paper with their corresponding full terms.
+              </p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/Statistics4.jpg" alt="arithmetic reasoning" width="80%"/>
+              <p> 
+                Statistics of the perceptual granularities. * and # denote the case for single choice and multiple choice, respectively.
+              </p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Construction Process</h2>
+        <!-- <div class="content has-text-justified">
+          <iframe src="LexicalTree.html" width="100%" height="600px" style="border:none;"></iframe>
+          <p>
+            To make the GMAI-MMBench more intuitive and user-friendly, we have systematized our labels
+            and structured the entire dataset into a lexical tree, which is presented in HTML format. Users can freely select the test contents based on this lexical tree. We believe that this
+            customizable benchmark will effectively guide the improvement of models in specific areas. For
+            instance, as mentioned in the main text, most models perform poorly at the bounding box level perception. Users can then update their models and test the accuracy at the bounding box level using
+            this lexical tree, thereby achieving targeted improvements in model performance.
+        </p> -->
+        <div class="content has-text-centered">
+          <img src="static/images/constrcut pipeline.png" alt="algebraic reasoning"  width="100%"/ class="center">
+          <p> Data construction process of EndoBench, consisting of (a) data collection, (b) QA standardization, and (c) data filtering. Finally, we implement (d) model evaluation on Endobench. </p>
+        </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<!-------------------------------------------------------------------- RESULTS SECTION -------------------------------------------------------------------->
+<!-- RESULTS SECTION -->
+<!-- 第一部分：仅标题使用 hero 组件并保留灰色背景 -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-3 mmmu">Experiment Results</h1>
+  </div>
+</section>
+
+<!-- 第二部分：后续内容移出 hero，使用普通 section 或 div -->
+<section class="section">
+  <div class="container">
+    <!-- 第一个图表 -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Results of different MLLMs on 12 clinical tasks.</h2>
+        <div class="content has-text-centered">
+          <img src="static/images/table1.png" alt="algebraic reasoning" width="80%" class="center">
+          <p>Table 1: Results of different MLLMs on 12 clinical tasks in EndoBench. The best-performing model in each category is in-bold, and the second best is underlined.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第二个图表 -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Results of different MLLMs on 4 different endoscopy scenarios and 4 different visual prompts.</h2>
+        <div class="content has-text-centered">
+          <img src="static/images/table2.png" alt="algebraic reasoning" width="75%" class="center">
+          <p>Table 2: Results of different MLLMs on 4 different endoscopy scenarios and 4 different visual prompts in EndoBench. The best-performing model in each category is in-bold, and the second best is underlined.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第三个图 -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Performance comparison of several leading MLLMs and Clinicians.</h2>
+        <div class="content has-text-centered">
+          <img src="static/images/figure2.jpg" alt="algebraic reasoning" width="80%" class="center">
+          <p>Figure 1: Performance comparison of several leading MLLMs and Clinicians.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第四个图 -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Performance comparison across four major categories.</h2>
+        <div class="content has-text-centered">
+          <img src="static/images/figure1.jpg" alt="algebraic reasoning" width="80%" class="center">
+          <p>Figure 2: Performance comparison across 4 major categories in EndoBench among existing MLLMs.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-------------------------------------------------------------------- Error Analysis SECTION -------------------------------------------------------------------->
+<div class="columns is-centered m-6">
+  <div class="column is-full">
+    <!-- 标题 -->
+    <h2 class="title is-3 has-text-centered">Analysis</h2>
+    
+    <!-- Observation 1 -->
+    <div class="content has-text-justified">
+      <p><b>Observation 1: Endoscopy remains a challenging domain for MLLMs, with significant gaps between models and human expertise.</b> Human experts achieve an average accuracy of 74.12% in endoscopy tasks, while the top-performing model, Gemini-2.5-Pro, reaches only 49.53%—a gap of roughly 25%. This highlights the inherent difficulty of endoscopy, which demands both precise visual interpretation and specialized medical knowledge. Proprietary models consistently outperform open-source models overall, yet open-source models show a surprising edge in surgical scenarios, where their accuracy improves markedly compared to random baselines. In contrast, for non-surgical tasks like landmark and organ identification, open-source models perform no better than random guessing. This disparity suggests that while open-source models can leverage structured contexts, they falter in knowledge-intensive tasks, pointing to a need for enhanced domain-specific capabilities.</b>
+      <!-- 此处省略详细内容以保持简洁 -->
+      </p>
+    </div>
+
+    <!-- Observation 2 -->
+    <div class="content has-text-justified">
+      <p><b>Observation 2: Medical domain-specific Supervised Fine-Tuning markedly boosts model performance.</b> Medical models that underwent domain-specific supervised fine-tuning, such as MedDr and HuatuoGPT-Vision-34B, perform exceptionally well in tasks like landmark identification and organ recognition, even outperforming all proprietary models. This indicates that domain pretraining effectively equips models with essential medical knowledge, enhancing their competitiveness in specialized tasks. However, some medical models exhibit limitations in instruction-following capabilities and suffer from overfitting, which restricts their performance in broader application scenarios. This suggests that while conducting domain-specific training, greater attention should be paid to balancing model generalization and task adaptability.</b>
+      <!-- 此处省略详细内容以保持简洁 -->
+      </p>
+    </div>
+
+    <!-- 图表展示 -->
+    <div class="content has-text-centered my-6">
+      <img src="static/images/figure3.jpg" alt="error distribution" width="65%">
+      <p class="mt-3">Figure 3: The influence of visual prompt in lesion quantification task among different MLLMs.</p>
+    </div>
+
+    <!-- Observation 3 -->
+    <div class="content has-text-justified">
+      <p><b>Observation 3: Model performance varies with visual prompt formats, exposing a gap between visual perception and medical comprehension.</b> The ability of models to understand spatial information varies significantly based on how visual prompts are formatted, rather than being consistently robust across different scenarios. To explore this, we test the same images across 3 tasks with different visual prompts, as shown in Figure \ref{fig:visual_prompt}. The results in Table \ref{tab:comparison} and Table \ref{tab:comparison_scene} reveal that most models, especially proprietary ones, excelled in the ROI Selection task, indicating strong visual comprehension in distinguishing between regions. However, they struggled to accurately classify lesion types within those regions, pointing to a lack of medical knowledge as the main source of errors rather than poor visual processing. This suggests that while models can spatially differentiate areas, their interpretation hinges on both the prompt format and their limited medical expertise. Ultimately, models’ spatial understanding is not broadly applicable but depends heavily on prompt structure, with insufficient medical knowledge acting as a key limitation.</b>
+      <!-- 此处省略详细内容以保持简洁 -->
+      </p>
+    </div>
+
+    <!-- Observation 4 -->
+    <div class="content has-text-justified">
+      <p><b>Observation 4: Polyp counting exposes dual challenges in lesion segmentation and numerical reasoning.</b> Polyp counting, a task that requires both spatial localization of lesions and numerical reasoning, remains challenging for most models, with all models achieving accuracy below 30%. To further analyze the sources of model errors, we introduced a new visual prompt format (Figure \ref{fig:polyp_case}), which led to modest improvements in accuracy across models. Notably, Gemini-2.5-Pro achieved a remarkable accuracy of 92% under this new prompting strategy. This significant improvement suggests that Gemini possesses strong capabilities in spatial recognition and counting, indicating that the primary limitation across models lies not in computational or spatial reasoning but rather in lesion identification. This finding underscores the critical need to enhance the integration of domain-specific medical knowledge in vision-language models to better address tasks that combine visual analysis with clinical understanding.</b>
+      <!-- 此处省略详细内容以保持简洁 -->
+      </p>
+    </div>
+
+    <!-- 第二个图表 -->
+    <div class="content has-text-centered my-6">
+      <img src="static/images/figure4.jpg" alt="polyp counting results" width="65%">
+      <p class="mt-3">Figure 4: The influence of visual prompt in lesion quantification task among different MLLMs.</p>
+    </div>
+  </div>
+</div>
+<!-------------------------------------------------------------------- Error Example  -------------------------------------------------------------------->
+
+<!-- <div class="columns is-centered m-6">
+  <div class="column is-full has-text-centered content">
+    <h2 class="title is-3" id="examples">Error Examples</h2>
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/irrelevant_response_AR_ID_image_atypical_appearance_of_COVID-19.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/irrelevant_response_AR_OS_image_fractures_on_the_left_part_of_lowerlimb.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/irrelevant_response_ASR_OG_image_ovary.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/lack_of_knowledge_DD_PM_mask_pneumothorax.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/lack_of_knowledge_NT_O_mask_choroidal_layer.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/Lok1_SG_LMP_image.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/Lok2_CR_LMP_image.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/PE-D-1_C_H_image.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/PE-D-2_SWR_GS_image.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/PE-D-3_OR-T_PM_mask.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/PE-M-1_AR_LMP_image.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/PE-M-2_NT_N_mask.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/PE-M-3_DD_CS_bbox.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/PE-M-4_DD_D_mask.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/question_misunderstanding_BVR_O_mask_retinal_vessel.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/question_misunderstanding_SWR_GH_image.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/unable_to_determine_AR_OG_image_endocervical.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/incorrect/Unable1_DD_OM_image.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-------------------------------------------------------------------- Correct Example -------------------------------------------------------------------->
+
+<!-- <div class="columns is-centered m-6">
+  <div class="column is-full has-text-centered content">
+    <h2 class="title is-3">Correct Examples</h2>
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/advanced glaucoma.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/basophil.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/correct_BVR_H_mask_renal_artery.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/correct_CR_H_bbox_white_blood_cell.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/correct_DD_CS_mask_cardiomegaly.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/correct_DD_PM_contour_rib_fracture.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/correct_NT_O_mask_choroidal_layer.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/correct_OR-T_PM_mask_lung.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/correct_SAR_U_bbox_correct.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/correct_SIR_GS_mask_instrument_suction.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/counting.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/DD_PM_bbox_correctg_atelectasis.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/OR-HN_E_mask_correct_thyroid_gland.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/OR-P_U_contour_correct_prostate.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/SIR_GS_bbox_correct.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/surgicalworkflow.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/ulcerative_colitis.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+      <div class="box m-5">
+        <div class="content has-text-centered">
+          <img src="static/images/QA/correct/urology_kidney.png" alt="grade-lv" width="60%"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!--BibTex citation -->
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{chen2024gmaimmbenchcomprehensivemultimodalevaluation,
+        title={GMAI-MMBench: A Comprehensive Multimodal Evaluation Benchmark Towards General Medical AI}, 
+        author={Pengcheng Chen and Jin Ye and Guoan Wang and Yanjun Li and Zhongying Deng and Wei Li and Tianbin Li and Haodong Duan and Ziyan Huang and Yanzhou Su and Benyou Wang and Shaoting Zhang and Bin Fu and Jianfei Cai and Bohan Zhuang and Eric J Seibel and Junjun He and Yu Qiao},
+        year={2024},
+        eprint={2408.03361},
+        archivePrefix={arXiv},
+        primaryClass={eess.IV},
+        url={https://arxiv.org/abs/2408.03361}, 
+  }</code></pre>
+    </div>
+</section> -->
+<!--End BibTex citation -->
+
+
+<footer class="footer">
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          This website is website adapted from <a href="https://uni-medical.github.io/GMAI-MMBench.github.io/">GMAI-MMBench</a>, licensed under a <a rel="license"
+                                              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+          Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
