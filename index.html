@@ -359,52 +359,145 @@
 
 
 <!-------------------------------------------------------------------- Error Analysis SECTION -------------------------------------------------------------------->
-<div class="columns is-centered m-6">
-  <div class="column is-full">
-    <!-- 标题 -->
-    <h2 class="title is-3 has-text-centered">Analysis</h2>
-    
-    <!-- Observation 1 -->
-    <div class="content has-text-justified">
-      <p><b>Observation 1: Endoscopy remains a challenging domain for MLLMs, with significant gaps between models and human expertise.</b> Human experts achieve an average accuracy of 74.12% in endoscopy tasks, while the top-performing model, Gemini-2.5-Pro, reaches only 49.53%—a gap of roughly 25%. This highlights the inherent difficulty of endoscopy, which demands both precise visual interpretation and specialized medical knowledge. Proprietary models consistently outperform open-source models overall, yet open-source models show a surprising edge in surgical scenarios, where their accuracy improves markedly compared to random baselines. In contrast, for non-surgical tasks like landmark and organ identification, open-source models perform no better than random guessing. This disparity suggests that while open-source models can leverage structured contexts, they falter in knowledge-intensive tasks, pointing to a need for enhanced domain-specific capabilities.</b>
-      <!-- 此处省略详细内容以保持简洁 -->
-      </p>
-    </div>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- 标题 -->
+        <h2 class="title is-3 has-text-centered">Analysis</h2>
+        
+        <!-- Observation 1 -->
+        <div class="content has-text-justified">
+          <p><b>Observation 1: Endoscopy remains a challenging domain for MLLMs, with significant gaps between models and human expertise.</b> Human experts achieve an average accuracy of 74.12% in endoscopy tasks, while the top-performing model, Gemini-2.5-Pro, reaches only 49.53%—a gap of roughly 25%. This highlights the inherent difficulty of endoscopy, which demands both precise visual interpretation and specialized medical knowledge. Proprietary models consistently outperform open-source models overall, yet open-source models show a surprising edge in surgical scenarios, where their accuracy improves markedly compared to random baselines. In contrast, for non-surgical tasks like landmark and organ identification, open-source models perform no better than random guessing. This disparity suggests that while open-source models can leverage structured contexts, they falter in knowledge-intensive tasks, pointing to a need for enhanced domain-specific capabilities.</p>
+        </div>
 
-    <!-- Observation 2 -->
-    <div class="content has-text-justified">
-      <p><b>Observation 2: Medical domain-specific Supervised Fine-Tuning markedly boosts model performance.</b> Medical models that underwent domain-specific supervised fine-tuning, such as MedDr and HuatuoGPT-Vision-34B, perform exceptionally well in tasks like landmark identification and organ recognition, even outperforming all proprietary models. This indicates that domain pretraining effectively equips models with essential medical knowledge, enhancing their competitiveness in specialized tasks. However, some medical models exhibit limitations in instruction-following capabilities and suffer from overfitting, which restricts their performance in broader application scenarios. This suggests that while conducting domain-specific training, greater attention should be paid to balancing model generalization and task adaptability.</b>
-      <!-- 此处省略详细内容以保持简洁 -->
-      </p>
-    </div>
+        <!-- Observation 2 -->
+        <div class="content has-text-justified">
+          <p><b>Observation 2: Medical domain-specific Supervised Fine-Tuning markedly boosts model performance.</b> Medical models that underwent domain-specific supervised fine-tuning, such as MedDr and HuatuoGPT-Vision-34B, perform exceptionally well in tasks like landmark identification and organ recognition, even outperforming all proprietary models. This indicates that domain pretraining effectively equips models with essential medical knowledge, enhancing their competitiveness in specialized tasks. However, some medical models exhibit limitations in instruction-following capabilities and suffer from overfitting, which restricts their performance in broader application scenarios. This suggests that while conducting domain-specific training, greater attention should be paid to balancing model generalization and task adaptability.</p>
+        </div>
 
-    <!-- 图表展示 -->
-    <div class="content has-text-centered my-6">
-      <img src="static/images/figure3.jpg" alt="error distribution" width="65%">
-      <p class="mt-3">Figure 3: The influence of visual prompt in lesion quantification task among different MLLMs.</p>
-    </div>
+        <!-- 图表展示 -->
+        <div class="content has-text-centered my-6">
+          <img src="static/images/figure3.jpg" alt="error distribution" width="65%">
+          <p class="mt-3">Figure 3: The influence of visual prompt in lesion quantification task among different MLLMs.</p>
+        </div>
 
-    <!-- Observation 3 -->
-    <div class="content has-text-justified">
-      <p><b>Observation 3: Model performance varies with visual prompt formats, exposing a gap between visual perception and medical comprehension.</b> The ability of models to understand spatial information varies significantly based on how visual prompts are formatted, rather than being consistently robust across different scenarios. To explore this, we test the same images across 3 tasks with different visual prompts, as shown in Figure \ref{fig:visual_prompt}. The results in Table \ref{tab:comparison} and Table \ref{tab:comparison_scene} reveal that most models, especially proprietary ones, excelled in the ROI Selection task, indicating strong visual comprehension in distinguishing between regions. However, they struggled to accurately classify lesion types within those regions, pointing to a lack of medical knowledge as the main source of errors rather than poor visual processing. This suggests that while models can spatially differentiate areas, their interpretation hinges on both the prompt format and their limited medical expertise. Ultimately, models’ spatial understanding is not broadly applicable but depends heavily on prompt structure, with insufficient medical knowledge acting as a key limitation.</b>
-      <!-- 此处省略详细内容以保持简洁 -->
-      </p>
-    </div>
+        <!-- Observation 3 -->
+        <div class="content has-text-justified">
+          <p><b>Observation 3: Model performance varies with visual prompt formats, exposing a gap between visual perception and medical comprehension.</b> The ability of models to understand spatial information varies significantly based on how visual prompts are formatted, rather than being consistently robust across different scenarios. To explore this, we test the same images across 3 tasks with different visual prompts, as shown in Figure \ref{fig:visual_prompt}. The results in Table \ref{tab:comparison} and Table \ref{tab:comparison_scene} reveal that most models, especially proprietary ones, excelled in the ROI Selection task, indicating strong visual comprehension in distinguishing between regions. However, they struggled to accurately classify lesion types within those regions, pointing to a lack of medical knowledge as the main source of errors rather than poor visual processing. This suggests that while models can spatially differentiate areas, their interpretation hinges on both the prompt format and their limited medical expertise. Ultimately, models’ spatial understanding is not broadly applicable but depends heavily on prompt structure, with insufficient medical knowledge acting as a key limitation.</p>
+        </div>
 
-    <!-- Observation 4 -->
-    <div class="content has-text-justified">
-      <p><b>Observation 4: Polyp counting exposes dual challenges in lesion segmentation and numerical reasoning.</b> Polyp counting, a task that requires both spatial localization of lesions and numerical reasoning, remains challenging for most models, with all models achieving accuracy below 30%. To further analyze the sources of model errors, we introduced a new visual prompt format (Figure \ref{fig:polyp_case}), which led to modest improvements in accuracy across models. Notably, Gemini-2.5-Pro achieved a remarkable accuracy of 92% under this new prompting strategy. This significant improvement suggests that Gemini possesses strong capabilities in spatial recognition and counting, indicating that the primary limitation across models lies not in computational or spatial reasoning but rather in lesion identification. This finding underscores the critical need to enhance the integration of domain-specific medical knowledge in vision-language models to better address tasks that combine visual analysis with clinical understanding.</b>
-      <!-- 此处省略详细内容以保持简洁 -->
-      </p>
-    </div>
+        <!-- Observation 4 -->
+        <div class="content has-text-justified">
+          <p><b>Observation 4: Polyp counting exposes dual challenges in lesion segmentation and numerical reasoning.</b> Polyp counting, a task that requires both spatial localization of lesions and numerical reasoning, remains challenging for most models, with all models achieving accuracy below 30%. To further analyze the sources of model errors, we introduced a new visual prompt format (Figure \ref{fig:polyp_case}), which led to modest improvements in accuracy across models. Notably, Gemini-2.5-Pro achieved a remarkable accuracy of 92% under this new prompting strategy. This significant improvement suggests that Gemini possesses strong capabilities in spatial recognition and counting, indicating that the primary limitation across models lies not in computational or spatial reasoning but rather in lesion identification. This finding underscores the critical need to enhance the integration of domain-specific medical knowledge in vision-language models to better address tasks that combine visual analysis with clinical understanding.</p>
+        </div>
 
-    <!-- 第二个图表 -->
-    <div class="content has-text-centered my-6">
-      <img src="static/images/figure4.jpg" alt="polyp counting results" width="65%">
-      <p class="mt-3">Figure 4: The influence of visual prompt in lesion quantification task among different MLLMs.</p>
+        <!-- 第二个图表 -->
+        <div class="content has-text-centered my-6">
+          <img src="static/images/figure4.jpg" alt="polyp counting results" width="65%">
+          <p class="mt-3">Figure 4: The influence of visual prompt in lesion quantification task among different MLLMs.</p>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Case Study</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this section, we present a case study analyzing the performance of multiple Multimodal Large Language Models (MLLMs) on EndoBench across various endoscopic scenarios. In addition to showcasing correct responses, we categorize errors into three distinct types: <strong>Perceptual Errors</strong>, <strong>Lack of Knowledge</strong>, and <strong>Incomplete Response</strong>. The following figures illustrate these case studies: correct samples are presented in Figures 1 through 6, while error samples are shown in Figures 7 through 10.
+          </p>
+          <p>
+            <strong>Correct Samples (Figures 1–6):</strong> These figures highlight exemplary performances by leading models such as Qwen-VL-72B and Gemini-2.5-Pro. These models demonstrate robust capabilities in accurately interpreting endoscopic images and providing clinically relevant responses, underscoring their potential for assisting in real-world endoscopic analysis.
+          </p>
+          <p>
+            <strong>Error Analysis:</strong> Errors observed in the case studies are classified into three categories, each revealing specific limitations in MLLM performance:
+          </p>
+          <ul>
+            <li>
+              <strong>Lack of Knowledge (Figure 7):</strong> In this case, the model correctly identifies low-level visual features, such as red points in the image, but misinterprets them as blood vessels. This error highlights a deficiency in domain-specific medical knowledge, where the model fails to contextualize visual cues with appropriate clinical understanding.
+            </li>
+            <li>
+              <strong>Perceptual Errors (Figure 8):</strong> Here, the model fails to recognize critical texture features, such as erythematous (reddened) areas, and instead focuses on irrelevant details, such as yellow-white granules. This indicates a limitation in the model’s ability to accurately perceive and prioritize clinically significant visual patterns.
+            </li>
+            <li>
+              <strong>Incomplete Response (Figures 9 and 10):</strong> These cases illustrate responses that lack useful information or fail to address the question entirely. In Figure 9, LLaVA-Med provides a response that is irrelevant to the posed question, offering no clinical insight. In Figure 10, the closed-source model GPT-4o declines to answer, potentially due to perceived task complexity or concerns about sensitive or ethical issues, reflecting a cautious approach to ensure system safety.
+            </li>
+          </ul>
+          <p>
+            These case studies emphasize the need for improved medical knowledge integration and enhanced perceptual capabilities to bridge the gap between current MLLM performance and clinical requirements.
+          </p>
+        </div>
+        <div class="columns is-multiline">
+          <div class="column is-half">
+            <figure class="image">
+              <img src="static/images/Case Study_01.jpg" alt="Case Study 01" class="center">
+              <figcaption>Figure 1: Correct sample from QvQ-72B.</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="static/images/Case Study_02.jpg" alt="Case Study 02" class="center">
+              <figcaption>Figure 2: Correct sample from QvQ-72B.</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="static/images/Case Study_03.jpg" alt="Case Study 03" class="center">
+              <figcaption>Figure 3: Correct sample from QvQ-72B.</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="static/images/Case Study_04.jpg" alt="Case Study 04" class="center">
+              <figcaption>Figure 4: Correct sample from Gemini-2.5-Pro.</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="static/images/Case Study_05.jpg" alt="Case Study 05" class="center">
+              <figcaption>Figure 5: Correct sample from Gemini-2.5-Pro.</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="static/images/Case Study_06.jpg" alt="Case Study 06" class="center">
+              <figcaption>Figure 6: Correct sample from Gemini-2.5-Pro.</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="static/images/Case Study_07.jpg" alt="Case Study 07" class="center">
+              <figcaption>Figure 7: Error sample demonstrating Lack of Knowledge (QvQ-72B).</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="static/images/Case Study_08.jpg" alt="Case Study 08" class="center">
+              <figcaption>Figure 8: Error sample demonstrating Perceptual Errors (QvQ-72B).</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="static/images/Case Study_09.jpg" alt="Case Study 09" class="center">
+              <figcaption>Figure 9: Error sample demonstrating Incomplete Response (LLaVA-Med).</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="static/images/Case Study_10.jpg" alt="Case Study 10" class="center">
+              <figcaption>Figure 10: Error sample demonstrating Incomplete Response (GPT-4o).</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-------------------------------------------------------------------- Error Example  -------------------------------------------------------------------->
 
 <!-- <div class="columns is-centered m-6">
