@@ -227,7 +227,7 @@
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            To address these challenges, we introduce <b>EndoBench</b>, a comprehensive endoscopy benchmark designed to evaluate the multi-dimensional capabilities of current multi-modal large language models (MLLMs) in endoscopic image analysis. To the best of our knowledge, EndoBench is the most extensive multi-modal endoscopic benchmark to date, encompassing 4 distinct endoscopic scenarios, 12 specialized endoscopic tasks with 12 secondary subtasks, and 5 levels of visual prompting granularities. For <b>multi-scenario coverage</b>, EndoBench spans the complete spectrum of endoscopy procedures—from Gastroscopy and Colonoscopy to Capsule endoscopy and Surgical endoscopy. For <b>multi-dimensional capacities evaluation</b>, EndoBench assesses MLLMs from 12 distinct tasks across 4 major categories, including anatomical structure recognition, lesion analysis and grading, spatial localization and region understanding, and surgical workflow and operation analysis. To thoroughly evaluate fine-grained perceptual capabilities, we implement 5 visual prompting granularities—image-level, box-level, contour-level, multi-box, and multi-contour. Our dataset construction involves collecting 20 public and 1 private endoscopy datasets and standardizing QA pairs, yielding 446,535 VQA pairs comprising our EndoBench dataset, the current largest endoscopic instruction-tuning collection. From~\ourinstruct, we extract representative pairs that undergo rigorous clinical review, resulting in our final EndoBench dataset of 6,832 clinically validated VQA pairs. For rigorous evaluation, we evaluate 13 open-source general-purpose MLLMs, 5 specialized medical MLLMs, and 5 proprietary general-purpose MLLMs on EndoBench. To establish clinical reference standards, we recruit two certified clinicians to answer questions from EndoBench. Extensive experiments show that while proprietary MLLMs outperform open-source and specialized models overall, they still lag behind human experts.
+            To address these challenges, we introduce <b>EndoBench</b>, a comprehensive endoscopy benchmark designed to evaluate the multi-dimensional capabilities of current multi-modal large language models (MLLMs) in endoscopic image analysis. To the best of our knowledge, EndoBench is the most extensive multi-modal endoscopic benchmark to date, encompassing 4 distinct endoscopic scenarios, 12 specialized endoscopic tasks with 12 secondary subtasks, and 5 levels of visual prompting granularities. For <b>multi-scenario coverage</b>, EndoBench spans the complete spectrum of endoscopy procedures—from Gastroscopy and Colonoscopy to Capsule endoscopy and Surgical endoscopy. For <b>multi-dimensional capacities evaluation</b>, EndoBench assesses MLLMs from 12 distinct tasks across 4 major categories, including anatomical structure recognition, lesion analysis and grading, spatial localization and region understanding, and surgical workflow and operation analysis. To thoroughly evaluate fine-grained perceptual capabilities, we implement 5 visual prompting granularities—image-level, box-level, contour-level, multi-box, and multi-contour. Our dataset construction involves collecting 20 public and 1 private endoscopy datasets and standardizing QA pairs, yielding 446,535 VQA pairs comprising our EndoBench dataset, the current largest endoscopic instruction-tuning collection. From EndoBench, we extract representative pairs that undergo rigorous clinical review, resulting in our final EndoBench dataset of 6,832 clinically validated VQA pairs. For rigorous evaluation, we evaluate 13 open-source general-purpose MLLMs, 5 specialized medical MLLMs, and 5 proprietary general-purpose MLLMs on EndoBench. To establish clinical reference standards, we recruit two certified clinicians to answer questions from EndoBench. Extensive experiments show that while proprietary MLLMs outperform open-source and specialized models overall, they still lag behind human experts.
           </p>
            <img src="static/images/dataset.jpg" alt="algebraic reasoning" class="center">
           </p>
@@ -442,23 +442,23 @@
         <h2 class="title is-3">Case Study</h2>
         <div class="content has-text-justified">
           <p>
-            In this section, we present a case study analyzing the performance of multiple Multimodal Large Language Models (MLLMs) on EndoBench across various endoscopic scenarios. In addition to showcasing correct responses, we categorize errors into three distinct types: <strong>Perceptual Errors</strong>, <strong>Lack of Knowledge</strong>, and <strong>Incomplete Response</strong>. The following figures illustrate these case studies: correct samples are presented in Figures 1 through 6, while error samples are shown in Figures 7 through 10.
+            In this section, we present a case study analyzing the performance of multiple Multimodal Large Language Models (MLLMs) on EndoBench across various endoscopic scenarios. In addition to showcasing correct responses, we categorize errors into three distinct types: <strong>Perceptual Errors</strong>, <strong>Lack of Knowledge</strong>, and <strong>Incomplete Response</strong>. The following figures illustrate these case studies: correct samples are presented in Figures 7 through 12, while error samples are shown in Figures 13 through 16.
           </p>
           <p>
-            <strong>Correct Samples (Figures 1–6):</strong> These figures highlight exemplary performances by leading models such as Qwen-VL-72B and Gemini-2.5-Pro. These models demonstrate robust capabilities in accurately interpreting endoscopic images and providing clinically relevant responses, underscoring their potential for assisting in real-world endoscopic analysis.
+            <strong>Correct Samples (Figures 7–12):</strong> These figures highlight exemplary performances by leading models such as Qwen-VL-72B and Gemini-2.5-Pro. These models demonstrate robust capabilities in accurately interpreting endoscopic images and providing clinically relevant responses, underscoring their potential for assisting in real-world endoscopic analysis.
           </p>
           <p>
             <strong>Error Analysis:</strong> Errors observed in the case studies are classified into three categories, each revealing specific limitations in MLLM performance:
           </p>
           <ul>
             <li>
-              <strong>Lack of Knowledge (Figure 7):</strong> In this case, the model correctly identifies low-level visual features, such as red points in the image, but misinterprets them as blood vessels. This error highlights a deficiency in domain-specific medical knowledge, where the model fails to contextualize visual cues with appropriate clinical understanding.
+              <strong>Lack of Knowledge (Figure 13):</strong> In this case, the model correctly identifies low-level visual features, such as red points in the image, but misinterprets them as blood vessels. This error highlights a deficiency in domain-specific medical knowledge, where the model fails to contextualize visual cues with appropriate clinical understanding.
             </li>
             <li>
-              <strong>Perceptual Errors (Figure 8):</strong> Here, the model fails to recognize critical texture features, such as erythematous (reddened) areas, and instead focuses on irrelevant details, such as yellow-white granules. This indicates a limitation in the model’s ability to accurately perceive and prioritize clinically significant visual patterns.
+              <strong>Perceptual Errors (Figure 14):</strong> Here, the model fails to recognize critical texture features, such as erythematous (reddened) areas, and instead focuses on irrelevant details, such as yellow-white granules. This indicates a limitation in the model’s ability to accurately perceive and prioritize clinically significant visual patterns.
             </li>
             <li>
-              <strong>Incomplete Response (Figures 9 and 10):</strong> These cases illustrate responses that lack useful information or fail to address the question entirely. In Figure 9, LLaVA-Med provides a response that is irrelevant to the posed question, offering no clinical insight. In Figure 10, the closed-source model GPT-4o declines to answer, potentially due to perceived task complexity or concerns about sensitive or ethical issues, reflecting a cautious approach to ensure system safety.
+              <strong>Incomplete Response (Figures 15 and 16):</strong> These cases illustrate responses that lack useful information or fail to address the question entirely. In Figure 15, LLaVA-Med provides a response that is irrelevant to the posed question, offering no clinical insight. In Figure 16, the closed-source model GPT-4o declines to answer, potentially due to perceived task complexity or concerns about sensitive or ethical issues, reflecting a cautious approach to ensure system safety.
             </li>
           </ul>
           <p>
@@ -469,61 +469,61 @@
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_01.jpg" alt="Case Study 01" class="center">
-              <figcaption>Figure 1: Correct sample from QvQ-72B.</figcaption>
+              <figcaption>Figure 7: Correct sample from QvQ-72B.</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_02.jpg" alt="Case Study 02" class="center">
-              <figcaption>Figure 2: Correct sample from QvQ-72B.</figcaption>
+              <figcaption>Figure 8: Correct sample from QvQ-72B.</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_03.jpg" alt="Case Study 03" class="center">
-              <figcaption>Figure 3: Correct sample from QvQ-72B.</figcaption>
+              <figcaption>Figure 9: Correct sample from QvQ-72B.</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_04.jpg" alt="Case Study 04" class="center">
-              <figcaption>Figure 4: Correct sample from Gemini-2.5-Pro.</figcaption>
+              <figcaption>Figure 10: Correct sample from Gemini-2.5-Pro.</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_05.jpg" alt="Case Study 05" class="center">
-              <figcaption>Figure 5: Correct sample from Gemini-2.5-Pro.</figcaption>
+              <figcaption>Figure 11: Correct sample from Gemini-2.5-Pro.</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_06.jpg" alt="Case Study 06" class="center">
-              <figcaption>Figure 6: Correct sample from Gemini-2.5-Pro.</figcaption>
+              <figcaption>Figure 12: Correct sample from Gemini-2.5-Pro.</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_07.jpg" alt="Case Study 07" class="center">
-              <figcaption>Figure 7: Error sample demonstrating Lack of Knowledge (QvQ-72B).</figcaption>
+              <figcaption>Figure 13: Error sample demonstrating Lack of Knowledge (QvQ-72B).</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_08.jpg" alt="Case Study 08" class="center">
-              <figcaption>Figure 8: Error sample demonstrating Perceptual Errors (QvQ-72B).</figcaption>
+              <figcaption>Figure 14: Error sample demonstrating Perceptual Errors (QvQ-72B).</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_09.jpg" alt="Case Study 09" class="center">
-              <figcaption>Figure 9: Error sample demonstrating Incomplete Response (LLaVA-Med).</figcaption>
+              <figcaption>Figure 15: Error sample demonstrating Incomplete Response (LLaVA-Med).</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_10.jpg" alt="Case Study 10" class="center">
-              <figcaption>Figure 10: Error sample demonstrating Incomplete Response (GPT-4o).</figcaption>
+              <figcaption>Figure 16: Error sample demonstrating Incomplete Response (GPT-4o).</figcaption>
             </figure>
           </div>
         </div>
