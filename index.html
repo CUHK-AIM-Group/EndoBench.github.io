@@ -105,16 +105,16 @@
               </div>
 
                   <div class="column has-text-centered">
-                    <!-- <div class="publication-links">
+                    <div class="publication-links">
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/2408.03361" target="_blank"
+                        <a href="https://arxiv.org/abs/2505.23601" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
                         </span>
                         <span>Paper</span>
                       </a>
-                    </span> -->
+                    </span>
 
                     <!-- Supplementary PDF link -->
                     <!-- <span class="link-block">
@@ -179,23 +179,25 @@
 
 <section class="section">
   <div class="container" style="margin-bottom: 2vh;">
-    <!-- Abstract. -->
+    <!-- Highlight. -->
     <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-four-fifths"> -->
-        <!-- <h2 class="title is-3">🔔News</h2> -->
-        <!-- <div class="content has-text-justified"> -->
-          <!-- <p>
-            <b>🚀[2024-09-26]: Accepted by NeurIPS 2024 Datasets and Benchmarks Track!🌟</b>
-          </p> -->
       <div class="column is-four-fifths">   
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Highlight</h2>
         <div class="content has-text-justified">
           <p>
-            Endoscopic procedures are essential for diagnosing and treating internal diseases, and multi-modal large language models (MLLMs) are increasingly applied to assist in endoscopy analysis. However, current benchmarks are limited, as they typically cover specific endoscopic scenarios and a small set of clinical tasks, failing to capture the real-world diversity of endoscopic modalities and the full range of skills needed in clinical workflows. To address these issues, we introduce EndoBench, the first comprehensive benchmark specifically designed to assess MLLMs across the full spectrum of endoscopic practice with multi-dimensional capacities. EndoBenchencompasses 4 distinct endoscopic modalities, 12 specialized clinical tasks with 12 secondary subtasks, and 5 levels of visual prompting granularities, resulting in 6,832 rigorously validated VQA pairs from 21 diverse datasets. Our multi-dimensional evaluation framework mirrors the clinical workflow—spanning anatomical recognition, lesion analysis, spatial localization, and surgical operations—to holistically gauge the perceptual and diagnostic abilities of MLLMs in realistic scenarios. We benchmark 23 state-of-the-art models, including general-purpose, medical-specialized, and proprietary MLLMs, and establish human clinician performance as a reference standard. Our extensive experiments reveal: (1) proprietary MLLMs outperform open-source and medical-specialized models overall, but still trail human experts; (2) medical-domain supervised fine-tuning substantially boosts task-specific accuracy; and (3) model performance remains sensitive to prompt format and clinical task complexity. EndoBench establishes a new standard for evaluating and advancing MLLMs in endoscopy, highlighting both progress and persistent gaps between current models and expert clinical reasoning.
-            </p>
+            1. We introduce EndoBench, the first comprehensive benchmark specifically designed to evaluate MLLMs across the complete spectrum of endoscopy, covering 4 endoscopic scenarios, 12 specialized tasks with 12 secondary subtasks, and 5 levels of visual prompting granularities.
+          </p>
+          <p>
+            2. We develop the multi-dimensional evaluation framework that mirrors the clinical workflow progression from basic anatomical recognition to advanced surgical intervention, assessing MLLMs' capabilities across the full spectrum of endoscopic analysis skills.
+          </p>
+          <p>
+            3. We conduct the extensive comparative evaluation of 23 MLLMs (13 open-source general-purpose, 5 medical-specialized, and 5 proprietary models) against human clinician performance, providing insights into current model capabilities.
+          </p>
         </div>
       </div>
     </div>
+    <!--/ Highlight. -->
+  </div>
     <!--/ Abstract. -->
 </div>
 <!-- </section>
@@ -224,12 +226,11 @@
   <div class="container">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Overview</h2>
+        <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
+          <img src="static/images/dataset.jpg" alt="EndoBench dataset" class="center">
           <p>
-            To address these challenges, we introduce <b>EndoBench</b>, a comprehensive endoscopy benchmark designed to evaluate the multi-dimensional capabilities of current multi-modal large language models (MLLMs) in endoscopic image analysis. To the best of our knowledge, EndoBench is the most extensive multi-modal endoscopic benchmark to date, encompassing 4 distinct endoscopic scenarios, 12 specialized endoscopic tasks with 12 secondary subtasks, and 5 levels of visual prompting granularities. For <b>multi-scenario coverage</b>, EndoBench spans the complete spectrum of endoscopy procedures—from Gastroscopy and Colonoscopy to Capsule endoscopy and Surgical endoscopy. For <b>multi-dimensional capacities evaluation</b>, EndoBench assesses MLLMs from 12 distinct tasks across 4 major categories, including anatomical structure recognition, lesion analysis and grading, spatial localization and region understanding, and surgical workflow and operation analysis. To thoroughly evaluate fine-grained perceptual capabilities, we implement 5 visual prompting granularities—image-level, box-level, contour-level, multi-box, and multi-contour. Our dataset construction involves collecting 20 public and 1 private endoscopy datasets and standardizing QA pairs, yielding 446,535 VQA pairs comprising our EndoBench dataset, the current largest endoscopic instruction-tuning collection. From EndoBench, we extract representative pairs that undergo rigorous clinical review, resulting in our final EndoBench dataset of 6,832 clinically validated VQA pairs. For rigorous evaluation, we evaluate 13 open-source general-purpose MLLMs, 5 specialized medical MLLMs, and 5 proprietary general-purpose MLLMs on EndoBench. To establish clinical reference standards, we recruit two certified clinicians to answer questions from EndoBench. Extensive experiments show that while proprietary MLLMs outperform open-source and specialized models overall, they still lag behind human experts.
-          </p>
-           <img src="static/images/dataset.jpg" alt="algebraic reasoning" class="center">
+            Endoscopic procedures are essential for diagnosing and treating internal diseases, and multi-modal large language models (MLLMs) are increasingly applied to assist in endoscopy analysis. However, current benchmarks are limited, as they typically cover specific endoscopic scenarios and a small set of clinical tasks, failing to capture the real-world diversity of endoscopic modalities and the full range of skills needed in clinical workflows. To address these issues, we introduce EndoBench, the first comprehensive benchmark specifically designed to assess MLLMs across the full spectrum of endoscopic practice with multi-dimensional capacities. EndoBenchencompasses 4 distinct endoscopic modalities, 12 specialized clinical tasks with 12 secondary subtasks, and 5 levels of visual prompting granularities, resulting in 6,832 rigorously validated VQA pairs from 21 diverse datasets. Our multi-dimensional evaluation framework mirrors the clinical workflow—spanning anatomical recognition, lesion analysis, spatial localization, and surgical operations—to holistically gauge the perceptual and diagnostic abilities of MLLMs in realistic scenarios. We benchmark 23 state-of-the-art models, including general-purpose, medical-specialized, and proprietary MLLMs, and establish human clinician performance as a reference standard. Our extensive experiments reveal: (1) proprietary MLLMs outperform open-source and medical-specialized models overall, but still trail human experts; (2) medical-domain supervised fine-tuning substantially boosts task-specific accuracy; and (3) model performance remains sensitive to prompt format and clinical task complexity. EndoBench establishes a new standard for evaluating and advancing MLLMs in endoscopy, highlighting both progress and persistent gaps between current models and expert clinical reasoning.
           </p>
         </div>
     </div>
