@@ -443,23 +443,27 @@
         <h2 class="title is-3">Case Study</h2>
         <div class="content has-text-justified">
           <p>
-            In this section, we present a case study analyzing the performance of multiple Multimodal Large Language Models (MLLMs) on EndoBench across various endoscopic scenarios. In addition to showcasing correct responses, we categorize errors into three distinct types: <strong>Perceptual Errors</strong>, <strong>Lack of Knowledge</strong>, and <strong>Incomplete Response</strong>. The following figures illustrate these case studies: correct samples are presented in Figures 7 through 12, while error samples are shown in Figures 13 through 16.
+            In this section, we present a case study analyzing the performance of multiple Multimodal Large Language Models (MLLMs) on EndoBench across various endoscopic scenarios. In addition to showcasing correct responses, we categorize errors into three distinct types: <strong>Perceptual Errors</strong>, <strong>Lack of Knowledge</strong>, <strong>Irrelevant Response</strong>, and <strong>Refusal to Answer</strong>. The following figures illustrate these case studies: correct samples are presented in Figures 7 through 12, while error samples are shown in Figures 13 through 20.
           </p>
           <p>
-            <strong>Correct Samples (Figures 7–12):</strong> These figures highlight exemplary performances by leading models such as Qwen-VL-72B and Gemini-2.5-Pro. These models demonstrate robust capabilities in accurately interpreting endoscopic images and providing clinically relevant responses, underscoring their potential for assisting in real-world endoscopic analysis.
+            <strong>Correct Samples (Figures 7–12):</strong> These figures highlight exemplary performances by leading models such as Gemini-2.5-Pro and GPT-4o. These models demonstrate robust capabilities in accurately interpreting endoscopic images and providing clinically relevant responses, underscoring their potential for assisting in real-world endoscopic analysis.
           </p>
           <p>
-            <strong>Error Analysis:</strong> Errors observed in the case studies are classified into three categories, each revealing specific limitations in MLLM performance:
+            <strong>Error Analysis:</strong> Errors observed in the case studies are classified into four categories, each revealing specific limitations in MLLM performance:
           </p>
           <ul>
+            
             <li>
-              <strong>Lack of Knowledge (Figure 13):</strong> In this case, the model correctly identifies low-level visual features, such as red points in the image, but misinterprets them as blood vessels. This error highlights a deficiency in domain-specific medical knowledge, where the model fails to contextualize visual cues with appropriate clinical understanding.
+              <strong>Perceptual Errors (Figure 13 and 14):</strong> MLLMs may struggle to accurately perceive or interpret visual information in images, including failing to detect critical objects, misidentifying elements, or overlooking essential details. In Fig. 13, QvQ-72B fails to recognize erythematous areas and focuses on irrelevant yellow-white granules. Similarly, in Fig. 14, HuatuoGPT-Vision-34B overlooks that the mucosa has been stained blue, leading to an incorrect interpretation of the scene. These indicate a limitation in the model’s ability to accurately recognize clinically significant visual patterns.
             </li>
             <li>
-              <strong>Perceptual Errors (Figure 14):</strong> Here, the model fails to recognize critical texture features, such as erythematous (reddened) areas, and instead focuses on irrelevant details, such as yellow-white granules. This indicates a limitation in the model’s ability to accurately perceive and prioritize clinically significant visual patterns.
+              <strong>Lack of Knowledge (Figure 15 and 16):</strong> MLLMs may accurately identify visual elements in an image and comprehend the question but still provide incorrect answers due to insufficient medical domain expertise. This manifests as misinterpretations of clinical signs or failure to differentiate between similar medical conditions. For instance, in Fig. 15, QvQ-72B correctly identifies low-level visual features, such as red points in the image, but misinterprets them as blood vessels. Similarly, in Fig. 16, HuatuoGPT-Vision-34B notices prominent bright red areas in the image during reasoning but fails to interpret them as bleeding, leading to an inaccurate response. These errors highlight a deficiency in domain-specific medical knowledge, where the model fails to contextualize visual cues with appropriate clinical understanding.
             </li>
             <li>
-              <strong>Incomplete Response (Figures 15 and 16):</strong> These cases illustrate responses that lack useful information or fail to address the question entirely. In Figure 15, LLaVA-Med provides a response that is irrelevant to the posed question, offering no clinical insight. In Figure 16, the closed-source model GPT-4o declines to answer, potentially due to perceived task complexity or concerns about sensitive or ethical issues, reflecting a cautious approach to ensure system safety.
+              <strong>Irrelevant Response (Figures 17 and 18):</strong> MLLMs sometimes generate responses that are unrelated to the user’s query, producing irrelevant, incomplete, or incomprehensible information that fails to address  the question. For example, in Fig. 17, LLaVA-Med is asked to determine the number of surgical instruments in an endoscopic image but outputs a tautological restatement of the query, lacking any clinical insight. In another case, Fig. 18, ColonGPT is tasked with classifying pathological findings in an endoscopic image but outputs a term unrelated to the provided options and observed pathology. These case studies emphasize the need for improved medical knowledge integration and enhanced perceptual capabilities to bridge the gap between current MLLM performance and clinical requirements.
+            </li>
+            <li>
+              <strong>Refusal to Answer (Figures 19 and 20):</strong> Certain MLLMs, particularly proprietary ones, are designed to decline responses to questions involving sensitive information, ethical dilemmas, or requiring professional medical advice to ensure safety and compliance. For example, in Fig. 19, GPT-4o is asked to identify the coordinates of a low-grade adenoma in an endoscopic image but states it is unable to provide the coordinates. Likewise, in Fig. 20, Grok-3 is tasked with counting surgical instruments in an endoscopic image but explicitly refuses, citing its inability to process such requests. These cases highlight the need for enhanced technical capabilities and clearer ethical guidelines to balance safety with clinical utility in MLLM responses.
             </li>
           </ul>
           <p>
@@ -470,61 +474,85 @@
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_01.jpg" alt="Case Study 01" class="center">
-              <figcaption>Figure 7: Correct sample from QvQ-72B.</figcaption>
+              <figcaption>Figure 7: Correct sample from Gemini-2.5-Pro.</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_02.jpg" alt="Case Study 02" class="center">
-              <figcaption>Figure 8: Correct sample from QvQ-72B.</figcaption>
+              <figcaption>Figure 8: Correct sample from Gemini-2.5-Pro.</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_03.jpg" alt="Case Study 03" class="center">
-              <figcaption>Figure 9: Correct sample from QvQ-72B.</figcaption>
+              <figcaption>Figure 9: Correct sample from Gemini-2.5-Pro.</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_04.jpg" alt="Case Study 04" class="center">
-              <figcaption>Figure 10: Correct sample from Gemini-2.5-Pro.</figcaption>
+              <figcaption>Figure 10: Correct sample from GPT-4o.</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_05.jpg" alt="Case Study 05" class="center">
-              <figcaption>Figure 11: Correct sample from Gemini-2.5-Pro.</figcaption>
+              <figcaption>Figure 11: Correct sample from GPT-4o.</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_06.jpg" alt="Case Study 06" class="center">
-              <figcaption>Figure 12: Correct sample from Gemini-2.5-Pro.</figcaption>
+              <figcaption>Figure 12: Correct sample from GPT-4o.</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_07.jpg" alt="Case Study 07" class="center">
-              <figcaption>Figure 13: Error sample demonstrating Lack of Knowledge (QvQ-72B).</figcaption>
+              <figcaption>Figure 13: Error sample demonstrating Perceptual Errors (QvQ-72B).</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_08.jpg" alt="Case Study 08" class="center">
-              <figcaption>Figure 14: Error sample demonstrating Perceptual Errors (QvQ-72B).</figcaption>
+              <figcaption>Figure 14: Error sample demonstrating Perceptual Errors (HuatuoGPT-Vision-34B).</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_09.jpg" alt="Case Study 09" class="center">
-              <figcaption>Figure 15: Error sample demonstrating Incomplete Response (LLaVA-Med).</figcaption>
+              <figcaption>Figure 15: Error sample demonstrating Lack of Knowledge (QvQ-72B).</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/Case Study_10.jpg" alt="Case Study 10" class="center">
-              <figcaption>Figure 16: Error sample demonstrating Incomplete Response (GPT-4o).</figcaption>
+              <figcaption>Figure 16: Error sample demonstrating Lack of Knowledge (HuatuoGPT-Vision-34B).</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="static/images/Case Study_11.jpg" alt="Case Study 11" class="center">
+              <figcaption>Figure 17: Error sample demonstrating Irrelevant Response (LLaVA-Med).</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="static/images/Case Study_12.jpg" alt="Case Study 12" class="center">
+              <figcaption>Figure 18: Error sample demonstrating Irrelevant Response (ColonGPT).</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="static/images/Case Study_13.jpg" alt="Case Study 13" class="center">
+              <figcaption>Figure 19: Error sample demonstrating Refusal to Answer (GPT-4o).</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="static/images/Case Study_14.jpg" alt="Case Study 14" class="center">
+              <figcaption>Figure 20: Error sample demonstrating Refusal to Answer (Grok-3).</figcaption>
             </figure>
           </div>
         </div>
